@@ -46,12 +46,12 @@ void selectionSort(int arr[], int n, int swaps[])
         if(arr[j]<arr[min_index])
         {
           min_index=j;
-          totalSwaps++;
         }
       }
       swap(&arr[min_index], &arr[i]);
       swaps[arr[i]]++;
       swaps[arr[min_index]]++;
+      totalSwaps++;
     }
     printSwaps(arr, n, swaps);
     printf("Total swaps: %d\n", totalSwaps);
@@ -76,7 +76,7 @@ int main()
 
   for(int i=0;i<100;i++)
     swaps1[i]=0;
-    
+
   printf("\nSelection Sort Array 1:\n");
   selectionSort(temp, size, swaps1);
 
@@ -90,9 +90,9 @@ int main()
 
   for(int i=0;i<100;i++)
     swaps2[i]=0;
-    
+
   printf("\nSelection Sort Array 2:\n");
   selectionSort(temp, size, swaps2);
-  
+
   return 0;
 }
